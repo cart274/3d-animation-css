@@ -1,0 +1,202 @@
+.circulo{width:100px;height:100px;background-color:#369;border-radius:50%;position: absolute;top: 300px;left: 50%;transform: rotateX(45deg);}
+.fig1{width:100px;height:300px;background-color:#969;border-radius:5%;position: absolute;top: 15%;left: 20%;}
+.fig2{width:100px;height:300px;background-color:#969;border-radius:5%;position: absolute;top: 30%;left: 70%;}
+		* {
+			padding: 0;
+			margin: 0;
+			pointer-events: none;
+		}
+
+		body {
+			background: #060b14;
+			overflow: hidden;
+
+			font-family: "Helvetica Neue", "Open Sans";
+			font-weight: 100;
+		}
+
+		a {
+			color: #4bc2f1;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		#container {
+			perspective: 50px;
+			-webkit-perspective: 50px;
+			-moz-perspective: 50px;
+			-ms-perspective: 50px;
+
+			transform-origin: 50% 100%;
+			-webkit-transform-origin: 50% 100%;
+			-moz-transform-origin: 50% 100%;
+			-ms-transform-origin: 50% 100%;
+
+			opacity: 0.55;
+		}
+
+		#welcome {
+			position: fixed;
+			width: 22rem;
+			left: 50%;
+			top: 45%;
+			margin-top: -1rem;
+			margin-left: -11rem;
+			
+			font-weight: 200;
+			color: #fff;
+			opacity: 0.65;
+			text-align: center;
+			font-size: 0.775rem;
+			line-height: 1.05rem;
+			letter-spacing: 0.135em;
+			word-spacing: -0.075rem;
+		}
+
+		@media screen and (max-width: 400px) {
+			#welcome {
+				font-size: 0.45rem !important;
+			}
+		}
+
+		#browserWidthNotice {
+			font-style: italic;
+			display: none;
+		}
+
+		#logo {
+			position: fixed;
+			right: 0.75rem;
+			bottom: 0.65rem;
+
+			cursor: pointer;
+
+			text-decoration: none;
+			color: #d6d6d6;
+			font-size: 2rem;
+			letter-spacing: 0.025em;
+		}
+
+		#logoDot {
+			color: #d74580;
+		}
+
+		.dot {
+			position: fixed;
+			width: 30px;
+			height: 130px;
+
+			border-radius: 30px;
+			background-color: #4bc2f1;
+		}
+
+/**************************************************************************/
+
+
+
+.container2 {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  perspective: 700px;
+  perspective-origin: 40%;
+  animation: 6s persp ease-in-out infinite;
+}
+@keyframes persp{
+	0%{perspective: 700px;}
+	50%{perspective: 0px;}
+	100%{perspective: 700px;}
+}
+#cube {
+	top:35%;
+	left: 45%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: 6s transform ease-in-out infinite;
+  transform: rotateX(-25deg) rotateY(15deg) rotateZ(-15deg);
+	cursor: pointer;
+}
+
+@keyframes transform{
+	0%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+	50%{transform: rotateX(-25deg) rotateY(15deg) rotateZ(-15deg);}
+	100%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+}
+#cube figure {
+  margin: 0;
+  width: 196px;
+  height: 196px;
+  display: block;
+  position: absolute;
+  border: 2px solid black;
+  background-color: #369;
+}
+#cube .front  { transform: rotateY(   0deg ) translateZ( 100px );background-color: #369; }
+#cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
+#cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
+#cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
+#cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
+
+
+body{background-color: #FFF;}
+
+
+
+
+/**************************************************************/
+
+#box {
+  width: 100%;
+  height: 100%;
+  top:5%;
+  left: 7%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: 6s transform2 ease-in-out infinite;
+  transform: rotateX(15deg) rotateY(-25deg) rotateZ(15deg);
+  position: absolute;
+}
+@keyframes transform2{
+	0%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+	50%{transform: rotateX(15deg) rotateY(-25deg) rotateZ(15deg);}
+	100%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);}
+}
+#box figure {
+  margin: 0;
+  display: block;
+  position: absolute;
+  border: 2px solid black;
+  background-color: #697;
+}
+
+#box .front,
+#box .back {
+  width: 296px;
+  height: 196px;
+}
+
+#box .right,
+#box .left {
+  width: 96px;
+  height: 196px;
+  left: 100px;
+}
+
+#box .top,
+#box .bottom {
+  width: 296px;
+  height: 96px;
+  top: 50px;
+}
+#box .front  { transform: rotateY(   0deg ) translateZ(  50px ); }
+#box .back   { transform: rotateX( 180deg ) translateZ(  50px ); }
+#box .right  { transform: rotateY(  90deg ) translateZ( 150px ); }
+#box .left   { transform: rotateY( -90deg ) translateZ( 150px ); }
+#box .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
+#box .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }

@@ -1,0 +1,46 @@
+body{overflow: hidden;}
+.container2 {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  perspective: 700px;
+  perspective-origin: 40%;
+  animation: 6s persp ease-in-out infinite;
+}
+@keyframes persp{
+	0%{perspective: 700px;}
+	50%{perspective: 0px;}
+	100%{perspective: 0px;}
+}
+#cube {
+	top:0%;
+	left: 45%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	animation: 6s transform ease-in-out infinite;
+	transform: rotateX(-25deg) rotateY(15deg) rotateZ(-15deg);
+	cursor: pointer;
+	transform-origin: 0 0;
+}
+
+@keyframes transform{
+	0%{transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);top:0%;}
+	100%{transform: rotateX(-3000deg) rotateY(0deg) rotateZ(0deg);top:200%;}
+}
+#cube figure {
+  margin: 0;
+  width: 196px;
+  height: 196px;
+  display: block;
+  position: absolute;
+  border: 2px solid black;
+  background-color: #369;
+}
+#cube .front  { transform: rotateY(   0deg ) translateZ( 100px ); background-image: url('../images/persona.jpg'); }
+#cube .back   { transform: rotateX( 180deg ) translateZ( 100px ); }
+#cube .right  { transform: rotateY(  90deg ) translateZ( 100px ); }
+#cube .left   { transform: rotateY( -90deg ) translateZ( 100px ); }
+#cube .top    { transform: rotateX(  90deg ) translateZ( 100px ); }
+#cube .bottom { transform: rotateX( -90deg ) translateZ( 100px ); }
